@@ -1,3 +1,3 @@
 learn branch
 git is free & distribute
-now i make conflict
+fix conflict
