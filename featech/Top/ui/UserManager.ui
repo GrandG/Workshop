@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>UserManager</class>
+ <widget class="QDialog" name="UserManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>742</width>
+    <height>584</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>查看当前任务</string>
+  </property>
+  <widget class="QWidget" name="verticalLayoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>540</y>
+     <width>741</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string/>
+      </property>
+      <widget class="QWidget" name="horizontalLayoutWidget">
+       <property name="geometry">
+        <rect>
+         <x>310</x>
+         <y>0</y>
+         <width>401</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QPushButton" name="pushButtonAdd">
+          <property name="text">
+           <string>添加</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonDel">
+          <property name="text">
+           <string>删除</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonSubmit">
+          <property name="text">
+           <string>确认提交</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonCancle">
+          <property name="text">
+           <string>撤销修改</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="pushButtonQuit">
+          <property name="text">
+           <string>退出</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QWidget" name="verticalLayoutWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>741</width>
+     <height>541</height>
+    </rect>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_2">
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="columnCount">
+       <number>8</number>
+      </property>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>90</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>用户名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>密码</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>姓名</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>邮箱地址</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>邮箱密码</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>工号</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>部门</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>权限</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

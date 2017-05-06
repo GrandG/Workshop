@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InfoInput</class>
+ <widget class="QDialog" name="InfoInput">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>741</width>
+    <height>579</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="../qrc/Top.qrc">
+    <normaloff>:/new/wl/Logo_ico.png</normaloff>:/new/wl/Logo_ico.png</iconset>
+  </property>
+  <widget class="QGroupBox" name="groupBox">
+   <property name="geometry">
+    <rect>
+     <x>4</x>
+     <y>4</y>
+     <width>731</width>
+     <height>571</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string/>
+   </property>
+   <widget class="QGroupBox" name="groupBoxTop">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>80</y>
+      <width>711</width>
+      <height>451</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>参数输入</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBox_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>701</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string/>
+    </property>
+    <widget class="QWidget" name="verticalLayoutWidget_2">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>10</y>
+       <width>88</width>
+       <height>51</height>
+      </rect>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_2">
+      <item>
+       <widget class="QLabel" name="label_21">
+        <property name="text">
+         <string>BOM文件位置：</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_20">
+        <property name="text">
+         <string>Brd文件位置：</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QLineEdit" name="lineEditBDMPos">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>10</y>
+       <width>481</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditBrdPos">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>40</y>
+       <width>481</width>
+       <height>20</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButtonBDM">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>10</y>
+       <width>37</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+    <widget class="QToolButton" name="toolButtonBrd">
+     <property name="geometry">
+      <rect>
+       <x>600</x>
+       <y>40</y>
+       <width>37</width>
+       <height>18</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>...</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pbSubmit">
+    <property name="geometry">
+     <rect>
+      <x>621</x>
+      <y>536</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>确认提交</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <tabstops>
+  <tabstop>lineEditBDMPos</tabstop>
+  <tabstop>lineEditBrdPos</tabstop>
+  <tabstop>pbSubmit</tabstop>
+  <tabstop>toolButtonBDM</tabstop>
+  <tabstop>toolButtonBrd</tabstop>
+ </tabstops>
+ <resources>
+  <include location="../qrc/Top.qrc"/>
+ </resources>
+ <connections/>
+</ui>
