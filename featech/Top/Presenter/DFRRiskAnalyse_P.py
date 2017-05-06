@@ -3,7 +3,8 @@ from PyQt5.QtWidgets import QApplication, QMainWindow,QMessageBox
 import sys
 from view.DFRRiskAnalyse_Fm import Ui_DFRRiskAnalyse
 
-class DFRRiskAnalyse_P(QtWidgets.QDialog,Ui_DFRRiskAnalyse):
+
+class DFRRiskAnalyse_P(QtWidgets.QDialog, Ui_DFRRiskAnalyse):
     def __init__(self, Dialog=None, NeedShow=True):
         super(DFRRiskAnalyse_P, self).__init__()
         if NeedShow:
@@ -13,7 +14,7 @@ class DFRRiskAnalyse_P(QtWidgets.QDialog,Ui_DFRRiskAnalyse):
                 super().setupUi(Dialog)
         self.ConnectSign()
 
-    #初始化页面数据
+    # 初始化页面数据
     def InitDate(self):
         self.ShowBomData()
         self.ShowBomData()
@@ -64,7 +65,8 @@ class DFRRiskAnalyse_P(QtWidgets.QDialog,Ui_DFRRiskAnalyse):
 
     def ShowBomData(self):
         data = self.GetBOMData()
-        if not data: return False
+        if not data:
+            return False
         row = len(data)-1
         col = len(data[0])
         self.tableWidgetBOM.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)

@@ -58,7 +58,7 @@ class ClientConfigure_P(Ui_DlgClientConfigure):
         #由逻辑控制模块实现
         pass
 
-    def _ShowMessage(self, content, title = '提示'):
+    def _ShowMessage(self, content, title='提示'):
         QtWidgets.QMessageBox.information(None, title, content)
 
 

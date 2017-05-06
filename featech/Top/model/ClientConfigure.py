@@ -9,6 +9,7 @@ import pickle
 from module.Crypto import *
 from module.g_Top import g_Data
 
+
 class ClientConfigure(ClientConfigure_P):
     def __init__(self, Dialog=None, NeedShow=True):
         super(ClientConfigure, self).__init__(Dialog, NeedShow)
@@ -26,7 +27,6 @@ class ClientConfigure(ClientConfigure_P):
 
             win32api.ShellExecute(0, 'open', ODBCFilePath, '', '', 1)
         else:
-
             pass
 
     def SaveInfoClick(self):
@@ -50,7 +50,7 @@ class ClientConfigure(ClientConfigure_P):
     def ReadConfigFile(self):
         data = {}
         FileName = g_Data.path + g_Data.data + g_Data.MySqlConfigFileName
-        if os.path.exists(FileName) :
+        if os.path.exists(FileName):
             try:
                 f = open(FileName, 'rb')
                 data = deciphering_dict(pickle.load(f))
