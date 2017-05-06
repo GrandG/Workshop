@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/new/wl">
+    <file>logo.png</file>
+    <file>sure.png</file>
+    <file>Now.png</file>
+    <file>Logo_ico.png</file>
+  </qresource>
+</RCC>
