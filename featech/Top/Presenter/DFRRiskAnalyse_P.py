@@ -56,11 +56,12 @@ class DFRRiskAnalyse_P(QtWidgets.QDialog, Ui_DFRRiskAnalyse):
     def NextConfirm(self):
         res = QMessageBox.question(self, ('确认进入下一步吗?'), ('确认选择'),
                                    QMessageBox.StandardButtons(QMessageBox.Yes | QMessageBox.No))
-        if res == QMessageBox.No: return False
+        if res == QMessageBox.No:
+            return False
         return True
 
     def GetBOMData(self, FileName):
-        #逻辑层实现
+        # 逻辑层实现
         pass
 
     def ShowBomData(self):
@@ -102,7 +103,8 @@ class DFRRiskAnalyse_P(QtWidgets.QDialog, Ui_DFRRiskAnalyse):
 
     def ShowInput(self):
         data = self.AnalyzeRule()
-        if not data: return False
+        if not data:
+            return False
 
         height = 35
         for dict in data:

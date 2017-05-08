@@ -1,0 +1,35 @@
+**分析模块：Abaqus/Explicit         
+** 单板冲击分析步,非线性打开         
+*STEP, NAME =PCBImpact         
+*Dynamic, Explicit         
+,0.24 
+*Bulk Viscosity         
+0.06, 1.2         
+** Mass Scaling: Semi-Automatic         
+**               Whole Model         
+*Fixed Mass Scaling, dt=5e-08, type=below min         
+**          
+** LOADS         
+**          
+** Name: Load-1   Type: Gravity         
+*Dload         
+, GRAV, 9810., 0., 0., -1.         
+**          
+** OUTPUT REQUESTS         
+**          
+*Restart, write, number interval=1, time marks=NO         
+**          
+** FIELD OUTPUT: F-Output-1         
+**          
+*Output, field, number interval=250         
+*Node Output         
+A, RF, U, V         
+*Element Output, directions=YES         
+LE, MISES, PE, PEEQ, S         
+*Contact Output         
+CFORCE, CSTRESS         
+**          
+** HISTORY OUTPUT: H-Output-1         
+**          
+*Output, history, variable=PRESELECT         
+*End Step         

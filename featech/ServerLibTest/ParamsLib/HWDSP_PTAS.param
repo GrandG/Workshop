@@ -1,0 +1,21 @@
+**分析模块：Abaqus/Standard 3D
+** 单板公差装配分析步,非线性打开
+*STEP,NLGEOM=YES  
+hwdfxStatic
+**求解类型为静力(Static)分析
+**总分析时长为1，初始增量步为0.02，最小增量步为1e-5,最大增量步为0.05
+*STATIC 
+0.02 ,1.0 ,1.0000E-05,0.05 
+*Output, field
+**节点输出项：节点位移(U)、节点力(CF)、节点支反力(RF)
+*NODE OUTPUT 
+U, 
+CF, 
+RF, 				
+**单元输出项：单元应力(S)、单元塑性应变(PE)、单元对数应变(LE)
+*ELEMENT OUTPUT 
+S,  
+PE,  
+LE, 
+*END STEP 
+********* 

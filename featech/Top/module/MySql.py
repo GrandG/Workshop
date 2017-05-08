@@ -52,20 +52,23 @@ class MySQL(object):
 
     def ConnectFormFile(self, fileName):
         data = {}
+
         try:
+
             if os.path.exists(fileName):
                 f = open(fileName, 'rb')
                 data = pickle.load(f)
                 data = deciphering_dict(data)
                 f.close()
         except:
+
             self.error = '数据库文件错误'
             return False
 
         _ServerAdds = data.get('ServerAdds', '127.0.0.1')
         _ServerPort = data.get('ServerPort', '3306')
         _UserName = data.get('UserName', 'root')
-        _Password = data.get('Password', 'wanli')
+        _Password = data.get('Password', '616311401')
         _DB = data.get('DB', 'ids')
 
         try:
@@ -73,6 +76,7 @@ class MySQL(object):
                                          user=_UserName, passwd=_Password, db=_DB,
                                          charset='utf8mb4',
                                          cursorclass=pymysql.cursors.DictCursor)
+
             self._conn.autocommit(False)
             self._cur = self._conn.cursor()
             self._isConnection = True
@@ -129,7 +133,7 @@ class MySQL(object):
         if NeedCommit: return self.commit()
         else: return True
 
-    def update(self, table_name, data, condition = '', NeedCommit = True):
+    def update(self, table_name, data, condition='', NeedCommit = True):
         '''
         :func   update      更新数据库
         :param table_name:  数据库表名    str

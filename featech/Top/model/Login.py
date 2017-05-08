@@ -13,7 +13,8 @@ class Login(Login_P):
     # 确认
     def confirm(self, name, password, task):
         res, err = self.confirmation(name, password)
-        if not res: return err
+        if not res:
+            return err
 
         g_Top.g_UserName = res['UserName']
         g_UserInfo.LoginRights = res['RightName']
@@ -24,13 +25,17 @@ class Login(Login_P):
     # 验证用户名密码
     def confirmation(self, name, password):
         SQL = 'select UserName,UserPassword,RightName'
-        SQL += ' from U_User where UserName="' + name + '"'
-        if not g_DB.Execute(SQL): return None, '数据库操作错误'
-        if g_DB.isEmpty(): return None, '用户名不存在！'
+        SQL += ' from u_user where UserName="' + name + '"'
+        if not g_DB.Execute(SQL):
+            return None, '数据库操作错误'
+        if g_DB.isEmpty():
+            return None, '用户名不存在！'
 
         res = g_DB.fetchRow()
-        if not res: return None, '数据库操作错误'
-        if res['UserPassword'] != password: return None, '密码错误！'
+        if not res:
+            return None, '数据库操作错误'
+        if res['UserPassword'] != password:
+            return None, '密码错误！'
 
         return res, ''
 

@@ -1,0 +1,19 @@
+**分析模块：Abaqus/Standard 3D
+** 单板模态分析步
+*Step, name=FreqStep, perturbation
+*Frequency, eigensolver=Lanczos, normalization=displacement
+**最大频率200
+, , 200., , , 
+** 
+** OUTPUT REQUESTS
+*Restart, write, frequency=0
+** 
+** FIELD OUTPUT: F-Output-1
+** 输出节点位移U
+*Output, field
+*Node Output
+U, 
+**输出节点应力MISES,S
+*Element Output, directions=YES
+MISES, S
+*End Step

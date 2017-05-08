@@ -10,6 +10,7 @@ from model.RuleQuery import RuleQuery
 from model.UserManager import UserManager
 from model.EditUser import EditUser
 
+
 class MainWindow_P(QtWidgets.QDialog, Ui_MainWindow):
     def __init__(self, Dialog=None, NeedShow=True):
         super(MainWindow_P, self).__init__()
@@ -19,7 +20,7 @@ class MainWindow_P(QtWidgets.QDialog, Ui_MainWindow):
             else:
                 super().setupUi(Dialog)
 
-        #用于在状态栏显示的标签
+        # 用于在状态栏显示的标签
         self._LableTask = QtWidgets.QLabel()
         self._LableUser = QtWidgets.QLabel()
         self._LableProductType = QtWidgets.QLabel()
@@ -31,9 +32,9 @@ class MainWindow_P(QtWidgets.QDialog, Ui_MainWindow):
         self.InitViewDate()
         self.ConnectSign()
 
-        self.FucFm = []         #管理功能性的页面
+        self.FucFm = []         # 管理功能性的页面
 
-    #初始化所有数据
+    # 初始化所有数据
     def InitViewDate(self):
         # 生成两个图标对象，用于按钮点击时的图标转换
         self.iconNow = QtGui.QIcon()
@@ -79,7 +80,7 @@ class MainWindow_P(QtWidgets.QDialog, Ui_MainWindow):
         # 逻辑层实现
         pass
 
-    #绑定事件
+    # 绑定事件
     def ConnectSign(self):
         self.pBtnQuit.clicked.connect(self.QuitClick)
         self.pBtnNext.clicked.connect(self.NextClick)
@@ -118,7 +119,7 @@ class MainWindow_P(QtWidgets.QDialog, Ui_MainWindow):
         #     QtWidgets.QMessageBox(self, '123', child.widget().text())
 
     def UploadFileClick(self):
-        #需要修改
+        # 需要修改
         filename = QtWidgets.QFileDialog.getOpenFileName(
                    self, 'Open File', '', 'Images (*.png *.xpm *.jpg)')
         pass
@@ -159,7 +160,7 @@ class MainWindow_P(QtWidgets.QDialog, Ui_MainWindow):
         data = self.GetRight()
         #未完成
 
-    def _ShowMessage(self, content, title = '提示'):
+    def _ShowMessage(self, content, title='提示'):
         QtWidgets.QMessageBox.information(None, title, content)
 
     def _aboutExecute(self):

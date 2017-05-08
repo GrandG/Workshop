@@ -1,0 +1,67 @@
+**分析模块：Abaqus/Standard 3D
+**求解类型为静力(Static)分析
+**总分析时长为1，初始增量步为0.005，最小增量步为1e-5,最大增量步为0.05
+*Step, name=PreStress, nlgeom=YES, inc=10000, convert sdi=YES
+PreStress
+*Static, stabilize=0.0002, allsdtol=0.05, continue=NO
+1e-7, 1., 1e-10, 0.05
+** CONTROLS
+*Controls, reset
+*Controls, analysis=discontinuous
+*Output, field
+**节点输出项：节点位移(U)、节点力(CF)、节点支反力(RF)
+*NODE OUTPUT 
+U, 
+CF, 
+RF, 				
+**单元输出项：单元应力(S)、单元塑性应变(PE)、单元对数应变(LE)
+*ELEMENT OUTPUT 
+S,  
+PE,  
+LE, 
+*END STEP 
+********* 
+**求解类型为静力(Static)分析
+**总分析时长为1，初始增量步为0.02，最小增量步为1e-5,最大增量步为0.05
+*Step, name=MoveDown, nlgeom=YES, inc=10000, convert sdi=YES
+MoveDown
+*Static, stabilize=0.0002, allsdtol=0.05, continue=NO
+1e-7, 1., 1e-10, 0.05
+** CONTROLS
+*Controls, reset
+*Controls, analysis=discontinuous
+*Output, field
+**节点输出项：节点位移(U)、节点力(CF)、节点支反力(RF)
+*NODE OUTPUT 
+U, 
+CF, 
+RF, 				
+**单元输出项：单元应力(S)、单元塑性应变(PE)、单元对数应变(LE)
+*ELEMENT OUTPUT 
+S,  
+PE,  
+LE, 
+*END STEP 
+********* 
+**求解类型为静力(Static)分析
+**总分析时长为1，初始增量步为0.02，最小增量步为1e-5,最大增量步为0.05
+*Step, name=MoveUp, nlgeom=YES, inc=10000, convert sdi=YES
+MoveUp
+*Static, stabilize=0.0002, allsdtol=0.05, continue=NO
+1e-7, 1., 1e-10, 0.05
+** CONTROLS
+*Controls, reset
+*Controls, analysis=discontinuous
+*Output, field
+**节点输出项：节点位移(U)、节点力(CF)、节点支反力(RF)
+*NODE OUTPUT 
+U, 
+CF, 
+RF, 				
+**单元输出项：单元应力(S)、单元塑性应变(PE)、单元对数应变(LE)
+*ELEMENT OUTPUT 
+S,  
+PE,  
+LE, 
+*END STEP 
+********* 

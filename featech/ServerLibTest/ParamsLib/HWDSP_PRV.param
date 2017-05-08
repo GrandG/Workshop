@@ -1,0 +1,36 @@
+**分析模块：Abaqus/Standard 3D                                                                               
+** 单板随机振动分析                                                                               
+** 单板模态分析步                                                                                 
+*Step, name=FreqStep, perturbation                                                    
+**最小，最大频率                                                                             
+*Frequency, eigensolver=Lanczos, normalization=displacement 
+,10,700, , , 
+**                                                                                
+** OUTPUT REQUESTS                                                                               
+*Restart, write, frequency=0                                                                               
+**                                                                                
+** FIELD OUTPUT: F-Output-1                                                                               
+** 输出节点位移U                                                                                  
+*Output, field, variable=PRESELECT                                                                               
+*End Step                                                                               
+** STEP: RandomResponse                
+*Step, name=RandomResponse, perturbation         
+*Random Response 
+10,700,9,3 
+*MODAL DAMPING,MODAL=DIRECT,DEFINITION=FREQUENCY RANGE 
+10,0.02 
+700,0.02 
+*SELECT EIGENMODES,DEFINITION=FREQUENCY RANGE 
+10,700 
+*BASE MOTION,DOF=3, LOAD case=1 
+*correlation, psd=psd, type=uncorrelated               
+1,1.               
+** OUTPUT REQUESTS                                                                               
+** FIELD OUTPUT: F-Output-2                                                                               
+*Output, field                                                                               
+*Node Output                                                                               
+A, U, V                                                                               
+*Element Output, directions=YES                                                                               
+LE, RS, S                                                                               
+*Output, history, frequency=0                                                                               
+*End Step                                                                               

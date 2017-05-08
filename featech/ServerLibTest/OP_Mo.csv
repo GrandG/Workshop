@@ -1,0 +1,10 @@
+编号,mo部件名称,类型,抽取mo单元部件,备注(mo单元位置描述),自动选择功能,抽取部件配对部件
+1,lcd_glass_mo_self,elements,lcd_glass_top lcd_glass_btm,lcd_glass_top lcd_glass_btm,,batt_soft
+2,lcd_ic_mo,elements,lcd_ic,,,
+3,pcb_main_mo,elements,pcb_main,顶部、底部两层表面膜单元,FT_AutoSelPCBMo,
+4,pcb_sub_mo,elements,pcb_sub,顶部、底部两层表面膜单元,FT_AutoSelPCBMo,
+5,mic_main_mo,elements,pcb_sub_mo,先查找是否有，没有的话再创建,,
+6,mic_main_mo,elements,pcb_main_mo,先查找是否有，没有的话再创建,,
+7,cam_main_detail,elements,cam_main_self,,,
+8,cam_front,elements,cam_front,,,
+9,tp_cg_mo,elements,tp_cg,,,

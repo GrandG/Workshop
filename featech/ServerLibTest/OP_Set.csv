@@ -1,0 +1,13 @@
+序号,set集名称,set集类型,元素所属部件,备注,自动选择功能,抽取部件配对部件
+1,midnode,nodes,all,,,
+2,earjack,nodes,earjack,,,
+3,ref_ground,nodes,rigid_ground,,,
+4,vel,nodes,all -rigid_ground,,FT_AutoSelVelSet,
+5,element_le,comps,a_cover* b_cover*,,,
+6,lcd_glass_edge_self,elements,lcd_glass,lcd_glass_top lcd_glass_down,,
+7,cpu_solder,elements,cpu_solder,,,
+8,moto_ref,nodes,moto_self,,,
+9,Chip_257_Solder,elements,Chip_257_Solder,,,
+10,Chip_261_Solder,elements,Chip_261_Solder,,,
+11,Chip_288_Solder,elements,Chip_288_Solder,,,
+12,Chip_295_Solder,elements,Chip_295_Solder,,,

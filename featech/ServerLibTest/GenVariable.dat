@@ -1,0 +1,49 @@
+#######################以下为壳网格划分并行计算########################
+global g_parallelnum;
+set g_parallelnum 2 ;
+global g_NumInGroup;
+set g_NumInGroup 3;
+global g_hmw; global g_hmh; global g_hmx; global g_hmy;
+####set g_hmw 1; set g_hmh 1; set g_hmx -1000; set g_hmy -1000;
+set g_hmw 400; set g_hmh 400; set g_hmx 0; set g_hmy 0;
+global g_MergeTR; 
+set g_MergeTR 2.5;
+######################以下为排除螺钉/铆钉文件路径#####################
+variable v_FilePathForNoUsedParts "E:/连接结构特征库";
+
+######################以下为Tie约束标识#####################
+global g_OnlyShow;   set  g_OnlyShow 1;
+
+
+#######################以下为默认系统设置###################
+global g_minElemSize;
+set g_minElemSize 0.01;
+global g_minNodeTol;
+set g_minNodeTol 0.01;
+
+#######################以下为默认Tie连接搜索公差设置###################
+global g_TieTol;
+set g_TieTol 0.15;  ##Tie连接搜索公差（在公差范围内的接触对都会被搜到）
+global g_TieAngle;
+set g_TieAngle 15;
+global g_TieType;
+###set  g_TieType "NODE TO SURFACE";
+set  g_TieType "SURFACE TO SURFACE";
+
+#######################以下为默认螺钉连接搜索公差设置###################
+global g_ScrewFind;
+set g_ScrewFind ALLOWDUPLICATED;  ##允许重复
+
+#########################摩擦系数设定#################
+global g_HSKCoefficient;
+set g_HSKCoefficient 0.3; #摩擦系数设定
+
+global ::g_mv; global ::g_gv; global ::g_id; global ::g_name; global ::g_color;
+####网格可见/几何可见/代号/颜色/名称
+set ::g_mv 5; set ::g_gv 5; set ::g_id 5; set ::g_color 5; set ::g_name 30;
+
+#####################以下为默认单元类型设置####################
+global g_elemTypeList;
+####单元类型设置,格式为:名称(类型1/类型2)
+set g_elemTypeList [list     实体壳(SC6R/SC8R)     实体(C3D8R/C3D6)     膜(M3D3/M3D4R)  \
+    壳单元(S3R/S4R)      刚体单元(R3D3/R3D4)     弹簧单元(SPRING2)      耦合单元(COUP_KIN)   ] 

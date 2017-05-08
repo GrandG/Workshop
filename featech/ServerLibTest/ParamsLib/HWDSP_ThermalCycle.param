@@ -1,0 +1,23 @@
+*Step, name=StepName, nlgeom=YES, inc=10000
+*Visco, cetol=1e-05
+0.02, 1., 1e-05, 0.05
+** 
+** OUTPUT REQUESTS
+** 
+*Restart, write, frequency=0
+** 
+** FIELD OUTPUT: F-Output-1
+** 
+*Output, field
+*Node Output
+CF, RF, U
+*Element Output, directions=YES
+CE, CEEQ, CEMAG, ELEDEN, ELEN, ENER, LE, PE, PEEQ, PEMAG, S
+*Contact Output
+CDISP, CSTRESS
+** 
+** HISTORY OUTPUT: H-Output-1
+** 
+*Output, history, variable=PRESELECT
+*End Step
+** ----------------------------------------------------------------

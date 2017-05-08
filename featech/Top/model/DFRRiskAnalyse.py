@@ -57,7 +57,7 @@ class DFRRiskAnalyse(DFRRiskAnalyse_P):
         CompareSymbols = {'<': ['小于', '以下', '不大于'], '>': ['大于', '以上', '超过'], '=': ['等于', '相当于']}
         names = ['单板表面', '电池', 'BGA器件']
         attributes = ['相对湿度', '重量', '距离', '螺钉位置']
-        units = ['mm', 'MM', '毫米', '%', '％', 'kg', 'Kg','KG', 'kG', 'g', 'G', '千克', '克']
+        units = ['mm', 'MM', '毫米', '%', '％', 'kg', 'Kg', 'KG', 'kG', 'g', 'G', '千克', '克']
 
         data = self.GetRuleList()
         res = []
@@ -181,7 +181,7 @@ class DFRRiskAnalyse(DFRRiskAnalyse_P):
         # FileName = self.GetBOMFileName()
         # if not FileName: return False
         # if not os.path.exists(FileName): return False
-        FileName = 'F:/test/BOM.xls'        #目前只做测试用
+        FileName = 'F:/test/BOM.xls'        # 目前只做测试用
 
         f = xlrd.open_workbook(FileName)
         table = f.sheets()[0]
@@ -201,9 +201,7 @@ class DFRRiskAnalyse(DFRRiskAnalyse_P):
             data.append(d)
         return data
 
-    # 获取BOM表的位置
-    def GetBOMFileName(self):
-        destPath = g_Data.path + 'Project\\' + g_Task.task + '\\'
+    # 获取BOM表的位置 + 'Project\\' + g_Task.task + '\\'
         SQL = 'select * from u_r_pcb_product where TaskName="' + g_Task.Task + '"'
         res = g_DB.ExecuteAndReturn(SQL)
         if not res:

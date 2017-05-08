@@ -1,0 +1,39 @@
+2-d {warpage>} 23 15.0 
+2-d {aspect>} 26 5.0 
+2-d {skew>} 29 60.0 
+2-d {chord dev>} 41 0.1 
+2-d {length<} 32 7.5
+2-d {jacobian<} 35 0.7
+2-d {taper>} 38 0.5 
+2-d_trias {min angle<} 52 20.0 
+2-d_trias {max angle>} 55 120.0 
+2-d_quads {min angle<} 45 45.0
+2-d_quads {max angle>} 48 135.0
+3-d {warpage>} 62 5.0
+3-d {aspect>} 65 5.0
+3-d {skew>} 68 60.0 
+3-d {tet collapse<} 91 0.5 
+3-d {length<} 71 7.5 
+3-d {jacobian<} 74 0.7
+3-d {vol skew>} 97 0.6 
+3-d {vol AR>} 94 5.0
+3-d_tria {min angle<} 85 20.0
+3-d_tria {max angle>} 88 120.0 
+3-d_quad {min angle<} 78 45.0
+3-d_quad {max angle>} 81 135.0
+1-d {length<} 9 20.0
+1-d {length>} 12 0.0
+user template 107 {  } 
+user filename 110 {  }  
+time {all types< failurecriteria} 126 0.005 
+time {springs<  failurecriteria} 129 0.005
+time {beams<  failurecriteria} 132 0.005 
+time {shells<  failurecriteria} 135 0.005 
+time {solids<  failurecriteria} 138 0.005 
+time {thick shells<  failurecriteria} 141 0.005 
+time {all types< minimum values} 145 0.0 
+time {springs< minimum values} 146 0.0 
+time {beams< minimum values} 147 0.0 
+time {shells< minimum values} 148 0.0 
+time {solids< minimum values} 149 0.0 
+time {thick shells< minimum values} 150 0.0

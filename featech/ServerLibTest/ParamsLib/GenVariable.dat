@@ -1,0 +1,158 @@
+#######################以下为默认文件路径--功能保留########################
+global g_CADFilePath;
+global g_inpFilePath;
+global g_odbFilePath;
+set g_CADFilePath "";
+set g_inpFilePath "";
+set g_odbFilePath "";
+global g_OnlyShow; 
+set  g_OnlyShow 1;
+
+#######################以下为默认组合并命名规则设置###################
+global g_mergeNum;
+set g_mergeNum 7; ####前8位
+
+#######################以下为部件替换模糊匹配名称位数###################
+global  g_matchNum;
+set  g_matchNum 5; ##模糊匹配名称位数
+
+
+#######################以下为默认系统设置###################
+global g_minElemSize; ###系统最小网格尺寸
+set g_minElemSize 0.01;
+global g_minNodeTol;   ###系统最小节点公差
+set g_minNodeTol 0.01;
+global g_iniTemp;     ###初始温度设置
+set g_iniTemp 25;
+global g_RVPoints; 
+	
+set g_RVPoints 9;
+global g_RVBias;
+set g_RVBias 3;
+
+#######################以下为默认Tie连接搜索公差设置###################
+global g_TieTol;
+set g_TieTol 0.15;  ##Tie连接搜索公差（在公差范围内的接触对都会被搜到）
+global g_TieAngle;
+set g_TieAngle 15;
+global g_TieType;
+###set  g_TieType "NODE TO SURFACE";
+set  g_TieType "SURFACE TO SURFACE";
+
+#######################以下为默认螺钉连接搜索公差设置###################
+global g_ScrewFind;
+set g_ScrewFind ALLOWDUPLICATED;  ##允许重复
+
+#########################散热器装配摩擦系数设定#################
+global g_HSKCoefficient;
+set g_HSKCoefficient 0.3; #摩擦系数设定
+
+
+#######################以下为默认网格尺寸设置###################
+global g_PCBElemSize; global g_BGAElemSize;
+global g_HandleElemSize; global g_ConnElemSize;
+global g_HSKElemSize; global g_FloorElemSize;
+global g_PackElemSize; global g_MetalElemSize;
+global g_BGABeamSize;
+global g_OtherModuleElemSize;
+set g_PCBElemSize 4; #PCB 
+set g_BGAElemSize 1; #BGA
+set g_BGABeamSize 0.5; #焊球梁单元模拟
+set g_HandleElemSize 4; #拉手条
+set g_ConnElemSize 4; #连接器
+set g_HSKElemSize 4; #散热器
+set g_FloorElemSize 40; #地面
+set g_PackElemSize 20; #纸盒
+set g_MetalElemSize 2; #金属连接件
+set g_OtherModuleElemSize 7; #其它模块
+
+
+#####################以下为默认单元类型设置####################
+global g_elemTypeList;
+####单元类型设置,格式为:名称(类型1/类型2)
+set g_elemTypeList [list     实体壳(SC6R/SC8R)     实体(C3D8R/C3D6)     膜(M3D3/M3D4R)  \
+    壳单元(S3R/S4R)      刚体单元(R3D3/R3D4)     弹簧单元(SPRING2)      耦合单元(COUP_KIN)   ] 
+    
+#####################以下为求解器默认设置#########################
+global g_mCpu; global g_memory;
+set g_mCpu 2;          #CPU数量；
+set g_memory 2000;    #内存大小,单位为Mbytes;
+
+#####################以下是手持板载荷参数设置#######################
+global g_HandSize;  
+set g_HandSize 50;  ###手的直径
+global g_ThumbSize;
+set g_ThumbSize 10;  ###大拇指的直径
+global g_FingerLength;
+set g_FingerLength 50;  ###手指长度
+
+
+#################以下为包装跌落默认分析参数设置########################
+global g_Coefficent;
+set g_Coefficient 0.3; #摩擦系数设定
+variable v_IVList;
+set v_IVList [list 4430 4850 5050 8000 10000]; #跌落高度设置
+global g_DropSpeedDescription;
+set g_DropSpeedDescription "注: 1m--4430mm/s; 1.2m--4850mm/s; 1.5m--5050mm/s"; #跌落高度说明
+
+################以下为热回流应力分析参数设置######################
+global g_MeshBuildMethod;
+set g_MeshBuildMethod "DIRECTMESH"; ###DIRECTMESH表示直接生成网格；OTHERMESH表示常规网格划分
+
+#################以下为ICT测试默认分析参数设置########################
+global g_ICTOperationMethod;
+set g_ICTOperationMethod "MANUAL";  ###AUTO表示定位后一键求解；MANUAL表示手动操作
+global g_PCBProp;
+set g_PCBProp "Shell_PCB_T200";  ###设定默认PCB截面属性文件，无扩展名
+global g_ICTCoefficent;
+set g_ICTCoefficient 0.3; #摩擦系数设定
+global g_ICTDXFRodLayerFilter;
+set g_ICTDXFRodLayerFilter  [list fromdxf_ft fromdxf_assistpr];
+
+################以下为热应力-焊点热疲劳分析参数设置######################
+global g_TFModelType;
+ ###DIRECTBUILD表示直接参数化建模；IMPORTCAD表示导入3D几何/导入模型
+set g_TFModelType  "DIRECTBUILD";
+
+################以下为导热垫装配应力分析参数设置######################
+global  g_PADSStepType;
+ ###STANDARD表示隐式分析；EXPLICIT表示显式分析; VISCO表示粘弹性分析
+set  g_PADSStepType  VISCO
+global g_UseExp;
+set g_UseExp 0;
+global g_Static;  global g_Kinetic;  global g_Decay;
+set g_Static 0.3; 
+set g_Kinetic 0.3;
+set g_Decay 0.3;
+
+####################以下设定管理器最大显示高度#######################
+global g_TableHeight;
+set g_TableHeight 500; #部件查看管理器默认最大高度,功能保留;
+global g_TableWidth;
+set g_TableWidth 400; #部件查看管理器默认宽度;
+global ::g_mv; global ::g_gv; global ::g_id; global ::g_name; global ::g_color;
+####网格可见/几何可见/代号/颜色/名称
+set ::g_mv 5; set ::g_gv 5; set ::g_id 5; set ::g_color 5; set ::g_name 30;
+
+
+
+################以下为引脚成型参数设置######################
+global g_PINCoefficient;
+set g_PINCoefficient  0.2;
+
+###################以下为结果云图输出文件夹(类型)列表;
+global g_savePicFolderList;
+global g_RTList;
+set g_savePicFolderList [list 应力云图 应变云图 位移云图 曲线关系云图 模型图解 边界条件];
+set g_RTList [list { }  \
+                   {"Mise应力"                                         "S-Stress components" Mises}  \
+                   {"最大主应力"                                    "S-Stress components" "Max Principal"} \
+                   {"中间主应力"                                    "S-Stress components" "Mid Principal"}  \
+                   {"最小主应力"                                    "S-Stress components" "Min Principal"}  \
+                   {"X向应变"                                          "LE-Logarithmic strain components" "LE11"}  \
+                   {"Y向应变"                                          "LE-Logarithmic strain components" "LE22"} \
+                   {"Z向应变"                                          "LE-Logarithmic strain components" "LE33"}  \
+                   {"最大主应变"                                    "LE-Logarithmic strain components" "Max Principal"} \
+                   {"最小主应变"                                    "LE-Logarithmic strain components" "Min Principal"}    
+                   ];
+ 

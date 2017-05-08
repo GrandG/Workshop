@@ -20,6 +20,7 @@ class MainWindow(MainWindow_P):
         super(MainWindow, self).__init__(Dialog, NeedShow)
 
         self.ConnectDB()
+
         self.login()
 
         # 每个子窗体对象
@@ -51,7 +52,7 @@ class MainWindow(MainWindow_P):
     def ConnectDB(self):
         if not g_DB.ConnectFormFile(g_Data.path + g_Data.data + g_Data.MySqlConfigFileName):
             g_Log.LogError('数据库连接失败')
-            g_Log.LogDebug('失败原因：' + g_DB.Error)
+            g_Log.LogDebug('失败原因：' + 'g_DB.Error')
             sys.exit()
 
     # 登录
@@ -104,9 +105,9 @@ class MainWindow(MainWindow_P):
     def HideNowFm(self):
         self.FmLst[self.NowPageIndex].hide()
 
-    #获取任务功能管理信息
+    # 获取任务功能管理信息
     def GetTask(self):
-        #任务管理
+        # 任务管理
         SQL = 'select TaskName,ProductType,Env from u_Task'
         SQL += ' where (TaskName="' + g_Task.Task + '") and (TaskOwner="' + g_Top.g_UserName + '")'
 

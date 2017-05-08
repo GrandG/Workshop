@@ -16,6 +16,7 @@ class Login_P(QtWidgets.QDialog, Ui_DlgLogin):
         self.lineEditPassword.setText('123')
         self.ShowTaskData(None)
 
+
     def SetTaskContent(self, Lst):
         self.comboBoxTask.clear()
         self.comboBoxTask.addItems(Lst)
@@ -23,11 +24,13 @@ class Login_P(QtWidgets.QDialog, Ui_DlgLogin):
     def ConfirmClick(self):
         res = self.confirm(self.lineEditName.text(), self.lineEditPassword.text(),
                            self.comboBoxTask.currentText())
-        if res: QtWidgets.QMessageBox.information(self, ('提示'), res)
-        else: self.QuitClick()
+        if res:
+            QtWidgets.QMessageBox.information(self, ('提示'), res)
+        else:
+            self.QuitClick()
 
     def confirm(self, name, password, task):
-        #由逻辑控制模块实现
+        # 由逻辑控制模块实现
         pass
 
     def QuitClick(self):

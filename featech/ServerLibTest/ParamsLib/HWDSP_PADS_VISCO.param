@@ -1,0 +1,18 @@
+**分析模块：Abaqus/Standard 3D
+** 导热垫装配应力分析步,非线性打开
+*STEP, NAME =PADSASSEMBLY
+*Visco, cetol=100., stabilize=0.0002, allsdtol=0.05, continue=NO
+5, 5, 5e-05, 5
+*Output, field
+**节点输出项：节点位移(U)、节点力(CF)、节点支反力(RF)
+*NODE OUTPUT 
+U, 
+CF, 
+RF, 				
+**单元输出项：单元应力(S)、单元塑性应变(PE)、单元对数应变(LE)
+*ELEMENT OUTPUT 
+S,  
+PE,  
+LE, 
+*END STEP 
+********* 

@@ -21,7 +21,8 @@ class EditTask_P(QtWidgets.QDialog, Ui_ViewTask):
 
     def QuitClick(self):
         self.close()
-        if self._quit: self._quit()
+        if self._quit:
+            self._quit()
 
     def DelClick(self):
         rowIndex = self.tableWidget.currentRow()
@@ -53,8 +54,10 @@ class EditTask_P(QtWidgets.QDialog, Ui_ViewTask):
     def GetData(self):
         # 逻辑层实现
         pass
+
     def ShowData(self, data):
-        if not data: return False
+        if not data:
+            return False
         self.tableWidget.setRowCount(len(data))
         self.tableWidget.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
 
